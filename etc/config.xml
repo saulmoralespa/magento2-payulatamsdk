@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @copyright Copyright (c) 2019 Saul Morales Paccheco www.saulmoralespa.com
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <payment>
+            <payulatamsdk_cards>
+                <active>0</active>
+                <title>PayU latam Cards</title>
+                <model>Saulmoralespa\PayuLatamSDK\Model\Cards\Payment</model>
+                <payment_action>authorize_capture</payment_action>
+                <allowspecific>0</allowspecific>
+            </payulatamsdk_cards>
+            <payulatamsdk>
+                <environment>1</environment>
+                <enviroment_g>
+                    <development>
+                        <country>CO</country>
+                    </development>
+                </enviroment_g>
+                <model>Saulmoralespa\PayuLatamSDK\Model\PayuLatamSDK</model>
+            </payulatamsdk>
+        </payment>
+    </default>
+</config>
