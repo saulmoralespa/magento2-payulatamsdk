@@ -264,8 +264,10 @@ class Payment extends \Magento\Payment\Model\Method\Cc
             //Cookie de la sesión actual.
             PayUParameters::USER_AGENT => $_SERVER['HTTP_USER_AGENT'],
 
-            PayUParameters::NOTIFY_URL => $this->_url->getUrl('payulatamsdk/payment/notify', ['order_id' => $order->getIncrementId()] )
+            PayUParameters::NOTIFY_URL => $this->_url->getUrl('payulatamsdk/payment/notify', ['increment_id' => $order->getIncrementId()] )
         );
+
+        $this->_helperData->log($parameters);
 
         try{
             $response = PayUPayments::doAuthorizationAndCapture($parameters);

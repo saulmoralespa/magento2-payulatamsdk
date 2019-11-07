@@ -12,7 +12,7 @@
     "e2fletcher/payu-latam-php-payments-sdk": "dev-master"
   },
   "type": "magento2-module",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": [
     "MIT"
   ],

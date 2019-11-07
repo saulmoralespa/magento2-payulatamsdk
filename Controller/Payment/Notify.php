@@ -54,10 +54,10 @@ class Notify extends \Magento\Framework\App\Action\Action
 
         $this->_helperData->log($params);
 
-        $order_id = $request->getParam('order_id');
+        $incrementId = $request->getParam('increment_id');
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $order_model = $objectManager->get('Magento\Sales\Model\Order');
-        $order = $order_model->load($order_id);
+        $order = $order_model->loadByIncrementId($incrementId);
 
         $method = $order->getPayment()->getMethod();
         $methodInstance = $this->_paymentHelper->getMethodInstance($method);
